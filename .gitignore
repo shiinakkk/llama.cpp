@@ -160,3 +160,10 @@ a.out.*
 
 AGENTS.local.md
 .pi/SYSTEM.md
+
+# MiniCPM5 adaptation docs (local work products)
+/modify.md
+/difftest.md
+/scripts/dump_llama_intermediate.cpp
+/scripts/dump_vllm_intermediate.py
+/scripts/compare_llama_vllm_intermediate.py
