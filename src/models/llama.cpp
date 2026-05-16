@@ -140,8 +140,6 @@ llama_model_llama::graph<embed>::graph(const llama_model & model, const llm_grap
             // compute Q and K and RoPE them
             auto [Qcur, Kcur, Vcur] = build_qkv(model.layers[il], cur,
                     n_embd_head, n_head, n_head_kv, il);
-            cb(Qcur, "Qraw", il);
-            cb(Kcur, "Kraw", il);
 
             Qcur = ggml_rope_ext(
                     ctx0, Qcur, inp_pos, rope_factors,

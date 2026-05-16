@@ -1575,7 +1575,7 @@ class TextModel(ModelBase):
             res = "sarvam-moe"
         if chkhsh == "2360c4549c2e7b27e6a2a0a8414392a41e370e0d398037a67c71850a515b0e4e":
             # ref: MiniCPM5-0.9B (Llama3-style BPE with ByteLevel decoder)
-            res = "default"
+            res = "minicpm5"
 
         if res is None:
             logger.warning("\n")
@@ -1828,7 +1828,7 @@ class TextModel(ModelBase):
                     rx = adapt_for_cpp_regex(pattern["Regex"])
                     regexes.append(rx)
                 elif "String" in pattern:
-                    escaped = pattern["String"].replace("\\", "\\\\")
+                    escaped = re.escape(pattern["String"])
                     regexes.append(escaped)
             elif step.get("type") == "Sequence":
                 for sub in step.get("pretokenizers", []):
